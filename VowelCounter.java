@@ -12,6 +12,7 @@ public class VowelCounter extends JFrame implements ActionListener {
      */
     private static final long serialVersionUID = 1L;
     JButton enterText = new JButton();
+    JButton clearText = new JButton();
     JLabel labelText = new JLabel();
     JFrame inputFrame = new JFrame();
     JLabel vowelLabel = new JLabel();
@@ -31,6 +32,13 @@ public class VowelCounter extends JFrame implements ActionListener {
         enterText.addActionListener(this);
         enterText.setFocusable(false);
 
+        clearText.setText("Clear");
+        clearText.setForeground(Color.white);
+        clearText.setBackground(Color.black);
+        clearText.setBounds(203, 180, 70, 30);
+        clearText.addActionListener(this);
+        clearText.setFocusable(false);
+
         wordInput = new JTextField();
         wordInput.setBackground(Color.black);
         wordInput.setForeground(Color.white);
@@ -39,17 +47,19 @@ public class VowelCounter extends JFrame implements ActionListener {
 
         vowelLabel.setText("");
         vowelLabel.setForeground(Color.white);
-        vowelLabel.setBounds(138, 190, 200, 30);
+        vowelLabel.setBounds(138, 215, 200, 30);
         vowelLabel.setFocusable(false);
         vowelLabel.setHorizontalAlignment(JLabel.CENTER);
 
         inputFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         inputFrame.setPreferredSize(new Dimension(500, 300));
         inputFrame.getContentPane().setBackground(Color.black);
+        inputFrame.setTitle("Vowel Counter");
         inputFrame.setResizable(false);
         inputFrame.add(labelText);
         inputFrame.add(wordInput);
         inputFrame.add(enterText);
+        inputFrame.add(clearText);
         inputFrame.add(vowelLabel);
         inputFrame.setLayout(null);
         inputFrame.pack();
@@ -115,6 +125,9 @@ public class VowelCounter extends JFrame implements ActionListener {
             } else {
                 vowelLabel.setText("There are " + wordChecker(wordInput.getText()) + " vowels in your input");
             }
+        }
+        if (e.getSource() == clearText) {
+            wordInput.setText(null);
         }
     }
 
