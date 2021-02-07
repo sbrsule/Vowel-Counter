@@ -17,7 +17,7 @@ public class VowelCounter extends JFrame implements ActionListener {
     JLabel labelText = new JLabel();
     JFrame inputFrame = new JFrame();
     JLabel vowelLabel = new JLabel();
-    ImageIcon icon = new ImageIcon("VowelCounter Icon.png");
+    ImageIcon icon = new ImageIcon("Images/VowelCounter Icon.png");
     JTextField wordInput;
     int vowels = 0;
 
