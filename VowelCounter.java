@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 public class VowelCounter extends JFrame implements ActionListener {
     /**
@@ -16,6 +17,7 @@ public class VowelCounter extends JFrame implements ActionListener {
     JLabel labelText = new JLabel();
     JFrame inputFrame = new JFrame();
     JLabel vowelLabel = new JLabel();
+    ImageIcon icon = new ImageIcon("VowelCounter Icon.png");
     JTextField wordInput;
     int vowels = 0;
 
@@ -55,6 +57,7 @@ public class VowelCounter extends JFrame implements ActionListener {
         inputFrame.setPreferredSize(new Dimension(500, 300));
         inputFrame.getContentPane().setBackground(Color.black);
         inputFrame.setTitle("Vowel Counter");
+        inputFrame.setIconImage(icon.getImage());
         inputFrame.setResizable(false);
         inputFrame.add(labelText);
         inputFrame.add(wordInput);
@@ -128,6 +131,7 @@ public class VowelCounter extends JFrame implements ActionListener {
         }
         if (e.getSource() == clearText) {
             wordInput.setText(null);
+            vowelLabel.setText(null);
         }
     }
 
